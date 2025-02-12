@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MakeMytrip</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&display=swap" rel="stylesheet" />
+
+   
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuR1EzO+tcaEPQogQ0KaoGN26/zrn2OImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <script src="https://kit.fontawesome.com/4b8d768b11.js" crossorigin="anonymous"></script>
+    
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: "Lato", sans-serif;
+            color: rgb(94, 94, 94);
+            background-image: url('https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg4.jpg'); 
+            background-size: cover;
+            background-position: top center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+
+        
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: rgba(255, 255, 255, 0.9); 
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 120px; 
+        }
+
+        
+        .categories {
+            background-color: white;
+            width: 960px;
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 1px 15px 1px #7a7a7a;
+            display: flex;
+            justify-content: space-evenly;
+            z-index: 2;
+            padding: 10px 0;
+        }
+
+        .categories span {
+            font-size: 14px;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .fas {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .selected {
+            color: rgb(29, 175, 243);
+        }
+
+        
+        .tickets {
+            background-color: white;
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 16px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-type {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ticket-type span {
+            padding: 6px;
+            font-weight: 800;
+            font-size: 14px;
+            color: #000;
+            margin-right: 5px;
+        }
+
+        .fa-check-circle {
+            font-size: 16px;
+        }
+
+        .selected-ticket-type {
+            background-color: rgb(214, 211, 211);
+            border-radius: 30px;
+        }
+
+        .flight-search-outer {
+            border-radius: 7px;
+            border: 1px solid rgb(204, 203, 203);
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .ticket-left {
+            padding: 20px;
+            border-right: 1px solid rgb(204, 203, 203);
+            width: 24%;
+        }
+
+        .ticket-left h1 {
+            margin: 0;
+            color: black;
+            font-size: 18px;
+        }
+
+        .w-300 {
+            width: 300px;
+        }
+
+        .search {
+            width: 215px;
+            height: 44px;
+            background: linear-gradient(93deg, #53b2fe, #065af3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            font-size: 24px;
+            color: white;
+            font-weight: 700;
+            position: absolute;
+            bottom: -20px;
+            left: 40%;
+            cursor: pointer;
+        }
+
+        
+        @media (max-width: 768px) {
+            .categories {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 0;
+            }
+
+            .tickets {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .ticket-left {
+                width: 100%;
+                padding: 15px;
+                border-right: none;
+            }
+
+            .search {
+                width: 80%;
+                font-size: 18px;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <img 
+                class="logo" 
+                src="https://promos.makemytrip.com/Growth/Images/3x/mmt_dt_header_icon_3x.png" 
+                alt="MakeMytrip Logo" 
+            />
+        </div>
+
+        
+        <div class="categories">
+            <span><i class="fa-solid fa-plane-departure"></i> Flights</span>
+            <span><i class="fa-solid fa-hotel"></i> Hotels</span>
+            <span><i class="fa-solid fa-house"></i> Homestays & Villas</span>
+            <span><i class="fa-solid fa-umbrella"></i> Holiday Packages</span>
+            <span><i class="fa-solid fa-train"></i> Trains</span>
+            <span><i class="fa-solid fa-bus"></i> Buses</span>
+            <span><i class="fa-solid fa-taxi"></i> Cabs</span>
+            <span><i class="fa-solid fa-credit-card"></i> Forex Card & Currency</span>
+            <span><i class="fa-solid fa-plane"></i> Travel Insurance</span>
+        </div>
+
+        
+        <div class="main">
+            <div class="tickets">
+                
+                <div class="ticket-type">
+                    <span><input type="radio" name="ticket-type" /> One Way</span>
+                    <span><input type="radio" name="ticket-type" /> Round Trip</span>
+                    <span><input type="radio" name="ticket-type" /> Multi City</span>
+                </div>
+
+                
+                <div class="flight-search-outer">
+                    
+                    <div class="ticket-left w-300">
+                        <span>From</span>
+                        <h1>Delhi</h1>
+                        <span>DEL, Delhi Airport India</span>
+                    </div>
+
+                    
+                    <div class="ticket-left w-300">
+                        <span>To</span>
+                        <h1>Bengaluru</h1>
+                        <span>BRL, Bengaluru International Airport</span>
+                    </div>
+
+                   
+                    <div class="ticket-left">
+                        <span>Departure</span>
+                        <h1>12</h1>
+                        <span>Feb'25</span>
+                        <span>Wednesday</span>
+                    </div>
+
+                    
+                    <div class="ticket-left">
+                        <span>Return</span>
+                        <h1></h1>
+                        <div style="margin-top: 20px; width: 90px; font-size: 12px;">
+                            Tap to add a return date for a bigger discount
+                        </div>
+                    </div>
+
+                    
+                    <div class="ticket-left" style="border-right: none;">
+                        <span>Travellers & Class</span>
+                        <span style="display: flex;">
+                            <h1 style="font-weight: 800; margin-right: 6px; color: black;">
+                                1
+                            </h1>
+                            <span style="margin-top: 16px">Traveller</span>
+                        </span>
+                        <span>Economy/Premium Economy</span>
+                    </div>
+                </div>
+
+                
+                <div class="search">SEARCH</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

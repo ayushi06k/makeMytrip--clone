@@ -1,0 +1,13 @@
+
+
+
+
+.background {
+    background-color: rgb(232, 232, 232);
+    background-repeat: no-repeat;
+    background-image: ;
+    background-size: 100% 500px;
+    display: flex;
+    align-content: center;
+}
+
