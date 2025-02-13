@@ -28,7 +28,6 @@
             font-family: "Lato", sans-serif;
             color: rgb(94, 94, 94);
             background-image: url('https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg4.jpg'); 
-            background-size: cover;
             background-position: top center;
             background-attachment: fixed;
             height: 100vh;
@@ -36,6 +35,12 @@
             justify-content: center;
             align-items: center;
         }
+
+        body{
+background-image: url(https://imgak.mmtcdn.com/pwa_v3/pwa_commons_assets/desktop/bg4.jpg'); );
+background-size: 100% 50%;
+background-repeat:no-repeat;
+}
 
         .container {
             display: flex;
@@ -106,6 +111,17 @@
         .selected {
             color: rgb(29, 175, 243);
         }
+
+        :root {
+            font-family: 'Lato', sans-serif;
+            
+        }
+
+        :root {
+            color: #008cff;
+            background-color: linear-gradient(93deg, #53b2fe,#065af3);
+            text-decoration-color: white;
+        } 
 
         
         .tickets {
@@ -240,6 +256,9 @@
         
         <div class="main">
             <div class="tickets">
+                <div class="flightWidgetSection appendBottom40">
+                    <div class="searchWidgetConatiner"></div>
+                </div>
                 
                 <div class="ticket-type">
                     <span><input type="radio" name="ticket-type" /> One Way</span>
@@ -300,3 +319,10 @@
     </div>
 </body>
 </html>
+    
+           
+     
+
+
+                        
+                            
