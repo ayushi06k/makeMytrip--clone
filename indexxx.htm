@@ -1,24 +1,32 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
+        
     <meta charset="UTF-8" />
+        
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MakeMytrip</title>
+        <title>MakeMytrip</title>
 
 
+        
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+        
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;800;900&display=swap" rel="stylesheet" />
 
 
+        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuR1EzO+tcaEPQogQ0KaoGN26/zrn2OImR1DfuLWnOo7aBA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+                integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuR1EzO+tcaEPQogQ0KaoGN26/zrn2OImR1DfuLWnOo7aBA=="
+                crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     <script src="https://kit.fontawesome.com/4b8d768b11.js" crossorigin="anonymous"></script>
 
-    <style>
+        <style>
         body {
             margin: 0;
             font-family: "Lato", sans-serif;
@@ -96,6 +104,7 @@
             flex-direction: column;
             align-items: center;
             cursor: pointer;
+
         }
 
         .fas {
@@ -142,6 +151,9 @@
             font-size: 14px;
             color: #000;
             margin-right: 5px;
+            z-index: 2;
+            box-shadow: #7a7a7a;
+
         }
 
         .fa-check-circle {
@@ -176,6 +188,70 @@
         .w-300 {
             width: 300px;
         }
+
+        
+
+
+
+        .ticket-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ticket-categories .fare-block {
+    background-color: #fff;
+    border: 1px solid #ddd; 
+    border-radius: 10px; 
+    padding: 20px; 
+    width: 30%; 
+    box-sizing: border-box; 
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ticket-categories .fare-block h1 {
+    font-size: 16px; 
+    font-weight: 700; 
+    margin: 0;
+    color: #333; 
+}
+
+.ticket-categories .fare-block span {
+    display: block;
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #555; 
+    margin-top: 8px;
+}
+
+.ticket-categories .fare-block:hover {
+    transform: scale(1.05); 
+    background-color: #f0f0f0; 
+    border-color: #008cff; 
+}
+
+.ticket-categories .fare-block.selected {
+    border-color: #008cff; 
+    background-color: #e5f4fe; 
+}
+
+@media (max-width: 768px) {
+    .ticket-categories .fare-block {
+        width: 48%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-categories .fare-block {
+        width: 100%; 
+    }
+}
+
+
 
         .search {
             width: 215px;
@@ -212,6 +288,14 @@
                 width: 100%;
                 padding: 15px;
                 border-right: none;
+
+            }
+
+            .ticket-categories {
+                width: 50%;
+                padding: 10px;
+                border-right: none;
+                border-right: 1px solid white;
             }
 
             .search {
@@ -224,108 +308,127 @@
 </head>
 
 <body>
-    <div class="container">
+        <div class="container">
 
-        <div class="header">
-            <img class="logo" src="https://promos.makemytrip.com/Growth/Images/3x/mmt_dt_header_icon_3x.png"
-                alt="MakeMytrip Logo" />
-        </div>
-
-
-        <div style="display: flex; flex-direction: column; align-items: center; margin-top: 96px;">
-            <div class="categories">
-            <span><i class="fa-solid fa-plane-departure"></i> Flights</span>
-            <span><i class="fa-solid fa-hotel"></i> Hotels</span>
-            <span><i class="fa-solid fa-house"></i> Homestays & Villas</span>
-            <span><i class="fa-solid fa-umbrella"></i> Holiday Packages</span>
-            <span><i class="fa-solid fa-train"></i> Trains</span>
-            <span><i class="fa-solid fa-bus"></i> Buses</span>
-            <span><i class="fa-solid fa-taxi"></i> Cabs</span>
-            <span><i class="fa-solid fa-credit-card"></i> Forex Card & Currency</span>
-            <span><i class="fa-solid fa-plane"></i> Travel Insurance</span>
-        </div>
-
-
-        <div class="main">
-            <div class="tickets">
-                <div class="flightWidgetSection appendBottom40">
-                    <div class="searchWidgetConatiner"></div>
-                </div>
-
-                <div class="ticket-type">
-                    <span><input type="radio" name="ticket-type" /> One Way</span>
-                    <span><input type="radio" name="ticket-type" /> Round Trip</span>
-                    <span><input type="radio" name="ticket-type" /> Multi City</span>
-                </div>
-
-
-                <div class="flight-search-outer">
-
-                    <div class="ticket-left w-300">
-                        <span>From</span>
-                        <h1>Delhi</h1>
-                        <span>DEL, Delhi Airport India</span>
+                <div class="header">
+                        <img class="logo" src="https://promos.makemytrip.com/Growth/Images/3x/mmt_dt_header_icon_3x.png"
+                                alt="MakeMytrip Logo" />
                     </div>
 
 
-                    <div class="ticket-left w-300">
-                        <span>To</span>
-                        <h1>Bengaluru</h1>
-                        <span>BRL, Bengaluru International Airport</span>
+                <div style="display: flex; flex-direction: column; align-items: center; margin-top: 96px;">
+                        <div class="categories">
+                            <span><i class="fa-solid fa-plane-departure"></i> Flights</span>
+                            <span><i class="fa-solid fa-hotel"></i> Hotels</span>
+                            <span><i class="fa-solid fa-house"></i> Homestays & Villas</span>
+                            <span><i class="fa-solid fa-umbrella"></i> Holiday Packages</span>
+                            <span><i class="fa-solid fa-train"></i> Trains</span>
+                            <span><i class="fa-solid fa-bus"></i> Buses</span>
+                            <span><i class="fa-solid fa-taxi"></i> Cabs</span>
+                            <span><i class="fa-solid fa-credit-card"></i> Forex Card & Currency</span>
+                            <span><i class="fa-solid fa-plane"></i> Travel Insurance</span>
+                        </div>
+
+
+                    <div class="main">
+                            <div class="tickets">
+                                    <div class="flightWidgetSection appendBottom40">
+                                            <div class="searchWidgetConatiner"></div>
+                                        </div>
+
+                                    <div class="ticket-type">
+                                            <span><input type="radio" name="ticket-type" /> One Way</span>
+                                            <span><input type="radio" name="ticket-type" /> Round Trip</span>
+                                            <span><input type="radio" name="ticket-type" /> Multi City</span>
+                                        </div>
+
+
+                                    <div class="flight-search-outer">
+
+                                            <div class="ticket-left w-300">
+                                                    <span>From</span>
+                                                    <h1>Delhi</h1>
+                                                    <span>DEL, Delhi Airport India</span>
+                                                </div>
+
+
+                                            <div class="ticket-left w-300">
+                                                    <span>To</span>
+                                                    <h1>Bengaluru</h1>
+                                                    <span>BRL, Bengaluru International Airport</span>
+                                                </div>
+
+
+                                            <div class="ticket-left">
+                                                    <span>Departure</span>
+                                                    <h1>12</h1>
+                                                    <span>Feb'25</span>
+                                                    <span>Wednesday</span>
+                                                </div>
+
+
+                                            <div class="ticket-left">
+                                                    <span>Return</span>
+                                                    <h1></h1>
+                                                    <div style="margin-top: 20px; width: 90px; font-size: 12px;">
+                                                            Tap to add a return date for a bigger discount
+                                                        </div>
+                                                </div>
+
+
+                                            <div class="ticket-left" style="border-right: none;">
+                                                    <span>Travellers & Class</span>
+                                                    <span style="display: flex;">
+                                                            <h1
+                                    style="font-weight: 800; margin-right: 6px; color: black;">
+                                                                    1
+                                                                </h1>
+                                                            <span style="margin-top: 16px">Traveller</span>
+                                                        </span>
+                                                    <span>Economy/Premium Economy</span>
+                                                </div>
+                                        </div>
+
+                                    <div style="display: flex;flex-direction: row;">
+                        <div class="ticket-categories">
+                                            <span>Select a special fare</span>
+                                            <span style="display: flex;"                     <h1>EXTRA SAVINGS</h1>
+                                            </div>
+
+                                    <div class="ticket-categories">
+                                        <span><input type="radio" name="ticket-categories" />Regular</span>
+                                            <span style="display: flex;"                     <h1>Regular fares</h1>
+                                            </div>
+
+                                    <div class="ticket-categories">
+                                        <span><input type="radio" name="ticket-categories" />Student</span>
+                                            <span style="display: flex;"                     <h1>Extra discounts/baggage
+                            </h1>
+                                            </div>
+
+                                    <div class="ticket-categories">
+                                        <span><input type="radio" name="ticket-categories" />Senior Citizen</span>
+                                            <span style="display: flex;"                     <h1>Up to $ 600 off</h1>
+                                            </div>
+
+                                    <div class="ticket-categories">
+                                        <span><input type="radio" name="ticket-categories" />Armed Forces</span>
+                                            <span style="display: flex;"                     <h1>Up to $ 600 off</h1>
+                                            </div>
+
+                                    <div class="ticket-categories">
+                                        <span><input type="radio" name="ticket-categories" />Doctor and Nurses</span>
+                                            <span style="display: flex;"                         <h1>Up to $600 off</h1>
+                                            </div>
                     </div>
 
 
-                    <div class="ticket-left">
-                        <span>Departure</span>
-                        <h1>12</h1>
-                        <span>Feb'25</span>
-                        <span>Wednesday</span>
-                    </div>
 
-
-                    <div class="ticket-left">
-                        <span>Return</span>
-                        <h1></h1>
-                        <div style="margin-top: 20px; width: 90px; font-size: 12px;">
-                            Tap to add a return date for a bigger discount
+                                    <div class="search">SEARCH</div>
+                                </div>
                         </div>
                     </div>
-
-
-                    <div class="ticket-left" style="border-right: none;">
-                        <span>Travellers & Class</span>
-                        <span style="display: flex;">
-                            <h1 style="font-weight: 800; margin-right: 6px; color: black;">
-                                1
-                            </h1>
-                            <span style="margin-top: 16px">Traveller</span>
-                        </span>
-                        <span>Economy/Premium Economy</span>
-                    </div>
-                </div>
-
-
-                <div class="search">SEARCH</div>
             </div>
-        </div>
-        </div>
-    </div>
 </body>
 
 </html>
-
-      
-           
-
-           
-         
-                
-            
-
-                    
-                
-     
-
-
-                        
-                            
